@@ -6,16 +6,16 @@
 class Solution {
 public:
     vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
-        int greatestNumberCandies = 0;
-        
+                
         // find the greatest number of candies using max_element
         int max_candy = *max_element(candies.begin(), candies.end());
-
-        // for each element, add max_candy and compare result to maxcandy
+                
+        // for each element, add max_candy and compare result to maxcandy            
+        vector<bool> result;
+                
         for(int candy : candies ) {
             result.push_back(candy + extraCandies >= max_candy);
         }
+        return result;
     }
-        vector<bool> result;
-        return result;
 };
